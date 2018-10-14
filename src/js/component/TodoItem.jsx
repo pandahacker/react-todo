@@ -11,8 +11,13 @@ export class TodoItem extends React.Component {
 			</div>
 		);
 	}
+
+	deleteTodo = () => {
+		this.props.delete(this.props.item);
+	};
 }
 
 TodoItem.propTypes = {
-	item: PropTypes.string
+	item: PropTypes.string,
+	delete: PropTypes.func
 };

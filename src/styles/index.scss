@@ -20,6 +20,12 @@ body{
     margin: 0 auto;
 }
 
-i {
+.list-item i{
     float: right;
+    visibility: hidden;
+}
+
+.list-item:hover i {
+    float: right;
+    visibility: visible;
 }
