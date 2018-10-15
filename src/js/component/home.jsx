@@ -2,7 +2,7 @@ import React from "react";
 import ReactDOM from "react-dom";
 
 import { TodoItem } from "./TodoItem.jsx";
-//import { AddItem } from "./AddItem.jsx";
+
 //create your first component
 export class Home extends React.Component {
 	constructor() {
@@ -15,6 +15,7 @@ export class Home extends React.Component {
 
 	render() {
 		var todos = this.state.todos;
+		var todosLength = todos.length;
 
 		todos = todos.map(
 			function(item, index) {
@@ -27,10 +28,10 @@ export class Home extends React.Component {
 		return (
 			<div>
 				<div className="text-center">
-					<h1>Todo List</h1>
+					<h1>Todos</h1>
 				</div>
 				<div className="list">
-					<form onSubmit={this.add}>
+					<form id="myform" onSubmit={this.add}>
 						<input
 							className="w-100"
 							type="text"
@@ -38,7 +39,12 @@ export class Home extends React.Component {
 						/>
 					</form>
 					{todos}
+					<div className="list-item footer">
+						{todosLength} items left.
+					</div>
 				</div>
+				<div className="bottom" />
+				<div className="bottom-last" />
 			</div>
 		);
 	}
@@ -56,29 +62,13 @@ export class Home extends React.Component {
 
 	add = e => {
 		e.preventDefault();
-
-		console.log(this.state.todos);
 		var updatedTodo = this.state.todos;
-		console.log(updatedTodo);
-
 		updatedTodo.push(this.newItem.current.value);
-
-		console.log(updatedTodo);
 
 		this.setState({
 			todos: updatedTodo
 		});
-	};
 
-	// _handleKeyPress = (e) => {
-	// 	e.preventDefault();
-	// 	if (e.key === 13) {
-	// 		var updatedTodo = this.state.todos;
-	// 		updatedTodo.push(this.newItem);
-	//
-	// 		this.setState({
-	// 			todos: updatedTodo
-	// 		});
-	// 	}
-	// }
+		document.getElementById("myform").reset();
+	};
 }

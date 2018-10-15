@@ -13,11 +13,34 @@
 */
 body{
     font-family: 'Raleway', sans-serif;
+    background-color: lightgrey;
+}
+
+input:focus{
+    outline: none;
+}
+
+input{
+    border: none;
+    border-bottom: solid 1px lightgrey;
+    padding: 5px 15px;
+}
+
+h1 {
+    font-size: 5rem;
+    opacity: .5;
 }
 
 .list {
-    width: 40%;
+    width: 30%;
     margin: 0 auto;
+    background-color: white;
+    box-shadow: 5px 5px 20px 5px #c6c6c6;
+}
+
+.list-item {
+    padding: 5px 15px;
+    border-bottom: solid 1px lightgrey;
 }
 
 .list-item i{
@@ -28,4 +51,25 @@ body{
 .list-item:hover i {
     float: right;
     visibility: visible;
+    padding: 5px 0;
+}
+
+.footer {
+    font-size: .75rem;
+}
+
+.bottom {
+    margin: 0 auto;
+    border-bottom: solid 1px lightgrey;
+    background: white;
+    height: 5px;
+    width: 29.80%;
+}
+
+.bottom-last {
+    margin: 0 auto;
+    border-bottom: solid 1px lightgrey;
+    background: white;
+    height: 5px;
+    width: 29.60%;
 }
